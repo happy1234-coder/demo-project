@@ -1,0 +1,67 @@
+<div
+  style="
+    background-color: cadetblue;
+    color: wheat;
+    margin: 0px 0px;
+    text-align: center;
+  "
+>
+  <h2>ID : {{ userId }}</h2>
+</div>
+<div class="Nav_div">
+  <h1>Update User</h1>
+
+  <form [formGroup]="myform" class="form_myForm" (ngSubmit)="onSubmit()">
+    <label style="margin: 2px">
+      First Name:
+      <input
+        [(ngModel)]="firstName"
+        class="form-control"
+        type="text"
+        formControlName="Name"
+      />
+    </label>
+
+    <label style="margin: 2px">
+      Last Name:
+      <input
+        [(ngModel)]="lastName"
+        class="form-control sm"
+        required
+        type="text"
+        formControlName="lastName"
+      />
+    </label>
+
+    <label style="margin: 2px">
+      Email:
+      <input
+        [(ngModel)]="Email"
+        class="form-control sm"
+        required
+        type="text"
+        formControlName="email"
+      />
+    </label>
+
+    <button type="submit" class="btn btn-sm btn-outline-primary my-2">
+      Update
+    </button>
+
+    <br />
+
+    <div
+      style="
+        padding: 8px;
+        background-color: lightblue;
+        color: black;
+        margin: 30px 30px;
+        border: none;
+        display: inline-block;
+      "
+      *ngIf="messageDisplay"
+    >
+      {{ Message }}
+    </div>
+  </form>
+</div>

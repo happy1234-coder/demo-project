@@ -1,0 +1,48 @@
+<div class="Nav_div">
+  <h1>Create User</h1>
+
+  <form [formGroup]="myform" class="form_myForm" (ngSubmit)="onSubmit()">
+    <label>
+      First Name:
+      <input class="form-control" required type="text" formControlName="Name" />
+    </label>
+
+    <label>
+      Last Name:
+      <input
+        class="form-control sm"
+        required
+        type="text"
+        formControlName="lastName"
+      />
+    </label>
+
+    <label>
+      Email:
+      <input
+        class="form-control sm"
+        required
+        type="text"
+        formControlName="email"
+      />
+    </label>
+
+    <button type="submit" class="btn btn-sm btn-outline-primary">Submit</button>
+
+    <br />
+
+    <div
+      style="
+        padding: 8px;
+        background-color: lightblue;
+        color: black;
+        margin: 30px 30px;
+        border: none;
+        display: inline-block;
+      "
+      *ngIf="messageDisplay"
+    >
+      {{ Message }}
+    </div>
+  </form>
+</div>
